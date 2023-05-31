@@ -1,10 +1,12 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import styles from './Login.module.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 type Props = {}
 
 const Login = (props: Props) => {
 
+    const navigate = useNavigate()
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
@@ -20,7 +22,13 @@ const Login = (props: Props) => {
             await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
                 console.log(response.data)
                 alert('Sucesso')
+                navigate('/home', {
+                    state: {
+                        user: response.data
+                    }
+                })
             }).catch((e) => {
+                alert(e)
                 console.log('[ Error request]:' + e)
             })
         } catch (error) {
