@@ -26,19 +26,20 @@ const Home = (props: Props) => {
     return (
         <div>
             <h1>Home</h1>
-            {products.length > 0 &&
-                products.map((product: any) => {
-                    return (
-                        <ProductCard
-                            name={product.name}
-                            price={product.price}
-                            image={product.thumbnail}
-                            key={product.id}
-                        />
-                    )
-                })
-
-            }
+            <div className={styles.container}>
+                {products.length > 0 &&
+                    products.map((product: any) => {
+                        return (
+                            <ProductCard
+                                name={product.title}
+                                price={product.price}
+                                image={product.images[0]}
+                                key={product.id}
+                            />
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }
