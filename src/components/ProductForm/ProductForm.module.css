@@ -1,0 +1,22 @@
+.card {
+    border: solid 1px #a9a9a9;
+    height: 400px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.txt {
+    color: red;
+    border: none;
+}
+
+.img {
+    width: 150px;
+    height: 180px;
+    border: 5px solid #fff;
+    margin: 10px;
+    /* border-radius: 50%; */
+
+
+}

@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './ProductCard.module.css'
+import ProductForm from '../ProductForm/ProductForm'
+
 type Props = {
     name: string,
     price: number,
@@ -8,10 +10,8 @@ type Props = {
 
 const ProductCard = ({ name, price, image }: Props) => {
     return (
-        <div className={styles.card}>
-            <img src={image} className={styles.img} alt="" />
-            <p className={styles.txt}>{name}</p>
-            <p>{price}</p>
+        <div>
+            <ProductForm name={name} price={price} image={image} />
         </div>
 
     )
