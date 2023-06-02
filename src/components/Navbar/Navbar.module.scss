@@ -37,10 +37,16 @@
     }
 
     .actions {
-        // width: 10%;
+        button {
+            width: 100%;
+            border: none;
+            font-size: 16px;
+            color: #61dafb;
+            background-color: transparent;
 
-        &:hover {
-            cursor: pointer;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }

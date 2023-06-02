@@ -26,6 +26,13 @@
   color: #ffffff;
   transition: 0.5s;
 }
-.navbar .actions:hover {
+.navbar .actions button {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  color: #61dafb;
+  background-color: transparent;
+}
+.navbar .actions button:hover {
   cursor: pointer;
 }/*# sourceMappingURL=Navbar.module.css.map */

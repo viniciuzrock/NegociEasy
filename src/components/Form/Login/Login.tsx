@@ -2,6 +2,9 @@ import React, { ChangeEvent, FormEvent, useState } from 'react'
 import styles from './Login.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Loading from '../../layout/Loading/Loading'
+import SubmitButton from '../../SubmitButton/SubmitButton'
+
 type Props = {}
 
 const Login = (props: Props) => {
@@ -9,10 +12,12 @@ const Login = (props: Props) => {
     const navigate = useNavigate()
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
+    const [removeLoading, setRemoveLoading] = useState<boolean>(false)
 
     const login = async (e: FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault()
+            setRemoveLoading(true)
             const data = {
                 email: email,
                 password: password
@@ -27,6 +32,7 @@ const Login = (props: Props) => {
                         user: response.data
                     }
                 })
+                setRemoveLoading(false)
             }).catch((e) => {
                 alert(e)
                 console.log('[ Error request]:' + e)
@@ -48,7 +54,12 @@ const Login = (props: Props) => {
                     <label htmlFor="password">Senha</label>
                     <input type="password" name="password" placeholder='Senha' onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <input type="submit" value='Entrar' />
+                {!removeLoading ? (
+                    <SubmitButton text='Entrar' custom='buy' />
+                ) : (
+
+                    < Loading />
+                )}
             </form>
         </div>
     )

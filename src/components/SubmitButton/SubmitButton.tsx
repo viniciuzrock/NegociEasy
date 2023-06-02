@@ -3,7 +3,7 @@ import styles from './SubmitButton.module.css'
 type Props = {
     text: string,
     custom: string
-    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const SubmitButton = ({ text, custom, onClick }: Props) => {

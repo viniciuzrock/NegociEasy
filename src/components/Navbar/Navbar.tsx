@@ -1,13 +1,17 @@
 import React from 'react'
 import styles from './Navbar.module.css'
+import { useNavigate } from 'react-router-dom'
 type Props = {
     children: React.ReactNode
 }
 
 const Header = ({ children }: Props) => {
 
+    const navigate = useNavigate()
 
-
+    const logOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        navigate("/")
+    }
 
     return (
         <div >
@@ -23,8 +27,11 @@ const Header = ({ children }: Props) => {
                         <li>Contato</li>
                     </ul>
                 </div>
-                <div className={styles.actions}>
-                    LogOff
+                <div className={styles.actions} >
+                    <button onClick={logOut} >
+                        LogOff
+                    </button>
+
                 </div>
             </nav>
             <main>{children}</main>
