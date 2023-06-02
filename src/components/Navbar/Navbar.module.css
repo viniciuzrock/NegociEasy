@@ -1,0 +1,31 @@
+.navbar {
+  background-color: #282c34;
+  color: #61dafb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+.navbar .logo:hover {
+  cursor: pointer;
+}
+.navbar .menu {
+  width: 50%;
+}
+.navbar .menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+.navbar .menu ul li {
+  transition: 0.5s;
+}
+.navbar .menu ul li:hover {
+  cursor: pointer;
+  color: #ffffff;
+  transition: 0.5s;
+}
+.navbar .actions:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=Navbar.module.css.map */

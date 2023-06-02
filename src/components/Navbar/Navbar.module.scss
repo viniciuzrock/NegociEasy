@@ -1,0 +1,46 @@
+.navbar {
+    background-color: #282c34;
+    color: #61dafb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+
+
+    .logo {
+        // width: 10%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .menu {
+        width: 50%;
+
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+
+            li {
+                transition: .5s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: #ffffff;
+                    transition: .5s;
+                }
+            }
+        }
+    }
+
+    .actions {
+        // width: 10%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

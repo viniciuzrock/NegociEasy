@@ -7,20 +7,26 @@
 }
 
 .addCart {
-    &:hover {
-        cursor: pointer;
-    }
-
     background-color: #55c2da3c;
     color: #134fc7;
+    transition: .5s;
+
+    &:hover {
+        cursor: pointer;
+        transition: .5s;
+        background-color: #94d9e93c;
+    }
 }
 
 .buy {
 
     background-color: #5783db;
     color: #fff;
+    transition: .5s;
 
     &:hover {
         cursor: pointer;
+        transition: .5s;
+        background-color: #2b64d6;
     }
 }

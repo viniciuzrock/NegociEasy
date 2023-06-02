@@ -16,6 +16,13 @@
     margin: 10px;
     border-radius: 20px;
     padding: 10px;
+    transition: .5s;
+
+    &:hover {
+        cursor: pointer;
+        transition: .5s;
+        transform: scale(1.1);
+    }
 
     .form {
         width: 100%;

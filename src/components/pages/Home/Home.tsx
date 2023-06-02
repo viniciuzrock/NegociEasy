@@ -25,7 +25,6 @@ const Home = (props: Props) => {
     }
     return (
         <div>
-            <h1>Home</h1>
             <div className={styles.container}>
                 {products.length > 0 &&
                     products.map((product: any) => {
