@@ -1,0 +1,26 @@
+.btn {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+
+}
+
+.addCart {
+    &:hover {
+        cursor: pointer;
+    }
+
+    background-color: #55c2da3c;
+    color: #134fc7;
+}
+
+.buy {
+
+    background-color: #5783db;
+    color: #fff;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

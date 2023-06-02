@@ -1,12 +1,22 @@
 .btn {
-    border-radius: 20px;
-
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
 }
 
 .addCart {
-    background-color: red;
+  background-color: rgba(85, 194, 218, 0.2352941176);
+  color: #134fc7;
+}
+.addCart:hover {
+  cursor: pointer;
 }
 
 .buy {
-    background-color: blue;
+  background-color: #5783db;
+  color: #fff;
 }
+.buy:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=SubmitButton.module.css.map */
