@@ -13,10 +13,12 @@ const SubmitButton = ({ text, custom, onClick, isLoading = false }: Props) => {
 
     return (
         <button className={`${styles.btn} ${styles[custom]}`} onClick={onClick}>
-            {isLoading ?
-                <Loading />
-                :
-                text}
+            <div className={styles.loader_container}>
+                {isLoading ?
+                    <Loading />
+                    :
+                    text}
+            </div>
 
         </button>
     )

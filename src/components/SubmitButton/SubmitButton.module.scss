@@ -5,6 +5,15 @@
     border: none;
 }
 
+.loader_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+}
+
+
+
 .addCart {
     background-color: #55c2da3c;
     color: #134fc7;

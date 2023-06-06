@@ -5,6 +5,13 @@
   border: none;
 }
 
+.loader_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
 .addCart {
   background-color: rgba(85, 194, 218, 0.2352941176);
   color: #134fc7;
