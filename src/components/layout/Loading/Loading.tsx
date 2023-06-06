@@ -4,10 +4,10 @@ type Props = {}
 
 const Loading = (props: Props) => {
     return (
-        <div className={styles.lds_ring}>dddddddddd<div></div><div></div><div></div><div></div></div>
-        // <div className={styles.loader_container}>
-        //     Loading
-        // </div>
+        <div className={styles.lds_ringa}>
+
+            <div className={styles.lds_ring}><div></div><div></div><div></div><div></div></div>
+        </div>
     )
 }
 

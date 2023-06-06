@@ -12,12 +12,12 @@ const Login = (props: Props) => {
     const navigate = useNavigate()
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
-    const [removeLoading, setRemoveLoading] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const login = async (e: FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault()
-            setRemoveLoading(true)
+            setIsLoading(true)
             const data = {
                 email: email,
                 password: password
@@ -26,16 +26,17 @@ const Login = (props: Props) => {
 
             await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
                 console.log(response.data)
-                alert('Sucesso')
+                // alert('Sucesso')
                 navigate('/home', {
                     state: {
                         user: response.data
                     }
                 })
-                setRemoveLoading(false)
             }).catch((e) => {
                 alert(e)
+                setIsLoading(false)
                 console.log('[ Error request]:' + e)
+
             })
         } catch (error) {
             console.log('[ Error Submit ]:' + error);
@@ -54,14 +55,9 @@ const Login = (props: Props) => {
                     <label htmlFor="password">Senha</label>
                     <input type="password" name="password" placeholder='Senha' onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                {!removeLoading ? (
-                    <SubmitButton text='Entrar' custom='buy' />
-                ) : (
-
-                    < Loading />
-                )}
+                <SubmitButton text='Entrar' custom='buy' isLoading={isLoading} />
             </form>
-        </div>
+        </div >
     )
 }
 
