@@ -26,12 +26,13 @@ const Login = (props: Props) => {
 
             await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
                 console.log(response.data)
-                // alert('Sucesso')
-                // navigate('/home', {
-                //     state: {
-                //         user: response.data
-                //     }
-                // })
+
+                localStorage.setItem('email', response.data.data.email)
+                navigate('/home', {
+                    state: {
+                        user: response.data
+                    }
+                })
             }).catch((e) => {
                 alert(e)
                 setIsLoading(false)

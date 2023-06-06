@@ -12,24 +12,20 @@ type Props = {
 
 const ProductForm = ({ name, price, image }: Props) => {
 
-
-
     const handleAddToCart = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        console.log('Adicinou ao carrinho');
+
     }
 
     const handleBuy = async (e: React.MouseEvent<HTMLButtonElement>) => {
         try {
-
             e.preventDefault()
-
             const data = {
                 name: name,
                 price: price,
                 image: image
             }
-
+            //enviar email como params routes, para envio de cada usuário (Mudar no backend)
             await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
                 alert('Compra finalizada!')
                 alert(resp.data)

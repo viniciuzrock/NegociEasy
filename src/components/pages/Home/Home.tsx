@@ -6,7 +6,7 @@ type Props = {}
 
 const Home = (props: Props) => {
     const [products, setproducts] = useState([])
-
+    const userEmail = localStorage.getItem('email')
     useEffect(() => {
         axios.get('http://localhost:3010/api/products/products').then((products) => {
             console.log(products.data);
@@ -18,13 +18,9 @@ const Home = (props: Props) => {
         })
     }, [])
 
-
-
-    const getAllProducts = async () => {
-
-    }
     return (
         <div>
+            <h1>Olá {userEmail}</h1>
             <div className={styles.container}>
                 {products.length > 0 &&
                     products.map((product: any) => {

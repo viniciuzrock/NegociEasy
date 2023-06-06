@@ -23,7 +23,7 @@ const Header = ({ children }: Props) => {
                     <ul>
                         <li>Categorias</li>
                         <li>Minhas compras</li>
-                        <li>Sobre nós</li>
+                        <li>Carrinho</li>
                         <li>Contato</li>
                     </ul>
                 </div>
