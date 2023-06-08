@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './SubmitButton.module.css'
 import Loading from '../layout/Loading/Loading'
-
+import { BsFillCartPlusFill } from 'react-icons/bs'
 type Props = {
     text: string,
     custom: string
@@ -10,6 +10,7 @@ type Props = {
 }
 
 const SubmitButton = ({ text, custom, onClick, isLoading = false }: Props) => {
+    console.log(onClick);
 
     return (
         <button className={`${styles.btn} ${styles[custom]}`} onClick={onClick}>
@@ -17,7 +18,19 @@ const SubmitButton = ({ text, custom, onClick, isLoading = false }: Props) => {
                 {isLoading ?
                     <Loading />
                     :
-                    text}
+                    <div>
+                        {text === "Adicionar ao carrinho" ?
+                            <div className={styles.addToCartBtn}>
+                                <BsFillCartPlusFill />
+                                {text}
+                            </div>
+                            :
+                            <div>
+                                {text}
+                            </div>
+                        }
+                    </div>
+                }
             </div>
 
         </button>

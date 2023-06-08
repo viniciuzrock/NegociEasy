@@ -18,7 +18,7 @@ const Header = ({ children }: Props) => {
         <div >
             <nav className={styles.navbar}>
                 <div className={styles.logo}>
-                    <h1>Negocieasy</h1>
+                    <h1>NegociEasy</h1>
                 </div>
                 <div className={styles.menu}>
                     <div className={styles.searchContainer}>

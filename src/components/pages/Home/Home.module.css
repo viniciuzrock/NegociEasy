@@ -1,7 +1,15 @@
+.containers {
+    background-color: #ebebeb;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container {
     display: flex;
     width: 70%;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+
 }

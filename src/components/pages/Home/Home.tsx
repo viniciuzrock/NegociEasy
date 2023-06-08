@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Home.module.css'
 import axios from 'axios'
-import ProductCard from '../../Product/ProductCard'
+import ProductCard from '../../ProductCard/ProductCard'
 type Props = {}
 
 const Home = (props: Props) => {
@@ -19,7 +19,7 @@ const Home = (props: Props) => {
     }, [])
 
     return (
-        <div>
+        <div className={styles.containers}>
             <h1>Olá {userEmail}</h1>
             <div className={styles.container}>
                 {products.length > 0 &&
