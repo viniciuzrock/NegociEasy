@@ -28,7 +28,7 @@ const Home = (props: Props) => {
                             <ProductCard
                                 name={product.title}
                                 price={product.price}
-                                image={product.images[0]}
+                                image={product.thumbnail}
                                 key={product.id}
                             />
                         )

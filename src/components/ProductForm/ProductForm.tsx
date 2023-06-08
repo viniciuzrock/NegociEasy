@@ -40,6 +40,7 @@ const ProductForm = ({ name, price, image }: Props) => {
         }
     }
 
+    // Trocar inputs => transformar em label e deixar os inputs no formato hidden
     return (
         <div className={styles.card}>
             <form className={styles.form}>
