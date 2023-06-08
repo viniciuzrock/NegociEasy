@@ -5,17 +5,17 @@
 }
 
 .card {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  cursor: pointer;
   border: solid 1px #c0c0c0;
-  box-shadow: 1px 1px 5px 1px #c0c0c0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 360px;
-  width: 220px;
+  box-shadow: 1px 1px 5px 1px #c0c0c0;
   margin: 10px;
   border-radius: 20px;
-  padding: 10px;
+  padding: 6px;
   transition: 0.5s;
 }
 .card:hover {
@@ -23,24 +23,34 @@
   transition: 0.5s;
   transform: scale(1.1);
 }
-.card .form {
+.card .form .img {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  height: 180px;
+  border: 5px solid #fff;
+  margin: auto;
 }
-.card .txt {
+.card .form .txt {
   color: #000;
   border: none;
   font-size: 16px;
   margin-bottom: 10px;
 }
-.card .img {
-  width: 150px;
-  height: 180px;
-  border: 5px solid #fff;
-  margin: auto;
+.card .form .infos {
+  padding: 15px;
+  border-top: 1px solid #ddd;
 }
-.card .actions {
+.card .form .infos .price {
+  font-size: 30px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 10px;
+}
+.card .form .infos .title {
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+}
+.card .form .infos .actions {
   display: flex;
   flex-direction: column;
 }/*# sourceMappingURL=ProductForm.module.css.map */
