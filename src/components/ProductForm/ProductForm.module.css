@@ -5,15 +5,12 @@
 }
 
 .card {
-  width: 100%;
-  max-width: 300px;
   background-color: #fff;
   cursor: pointer;
   border: solid 1px #c0c0c0;
   display: flex;
   flex-direction: column;
   box-shadow: 1px 1px 5px 1px #c0c0c0;
-  margin: 10px;
   border-radius: 20px;
   padding: 6px;
   transition: 0.5s;
