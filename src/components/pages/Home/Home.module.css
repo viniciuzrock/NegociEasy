@@ -1,15 +1,12 @@
-.containers {
-    background-color: #ebebeb;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.home {
+  background-color: #ebebeb;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.container {
-    display: flex;
-    width: 70%;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-
-}
+.home .container {
+  padding: 120px 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}/*# sourceMappingURL=Home.module.css.map */

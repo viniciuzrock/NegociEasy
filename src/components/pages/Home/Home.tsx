@@ -19,7 +19,7 @@ const Home = (props: Props) => {
     }, [])
 
     return (
-        <div className={styles.containers}>
+        <div className={styles.home}>
             <h1>Olá {userEmail}</h1>
             <div className={styles.container}>
                 {products.length > 0 &&
