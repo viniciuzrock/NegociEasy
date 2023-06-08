@@ -1,0 +1,35 @@
+.btn {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+}
+
+.loader_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.addCart {
+  background-color: rgba(85, 194, 218, 0.2352941176);
+  color: #134fc7;
+  transition: 0.5s;
+}
+.addCart:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: rgba(148, 217, 233, 0.2352941176);
+}
+
+.buy {
+  background-color: #5783db;
+  color: #fff;
+  transition: 0.5s;
+}
+.buy:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #2b64d6;
+}/*# sourceMappingURL=SubmitButton.module.css.map */

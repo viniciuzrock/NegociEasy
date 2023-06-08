@@ -1,0 +1,108 @@
+.navbar {
+    background-color: #282c34;
+    color: #61dafb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    // width: 100%;
+    // position: fixed;
+
+
+    .logo {
+        // width: 10%;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .searchContainer {
+        display: flex;
+        background-color: #ffffff;
+        border-radius: 10px;
+
+
+        form {
+            // width: 40em;
+            // display: flex;
+            // align-items: center;
+        }
+
+        input {
+            width: 40em;
+            font-size: .9em;
+            padding: 0.5em;
+            border-radius: 0px;
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 10em;
+            font-size: 1em;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-left: 1px solid #dddd;
+            transition: .5s;
+
+            // background: none;
+            &:hover {
+                cursor: pointer;
+                background-color: #d4d3d3;
+                color: #000;
+                transition: .5s;
+            }
+
+        }
+    }
+
+    .menu {
+        width: 40em;
+        // background-color: red;
+        height: 4em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .submenu {
+
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+
+            li {
+                transition: .5s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: #ffffff;
+                    transition: .5s;
+                }
+            }
+        }
+    }
+
+    .actions {
+        button {
+            width: 100%;
+            border: none;
+            font-size: 16px;
+            color: #61dafb;
+            background-color: transparent;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

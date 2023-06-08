@@ -1,0 +1,40 @@
+.btn {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+}
+
+.loader_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+}
+
+
+
+.addCart {
+    background-color: #55c2da3c;
+    color: #134fc7;
+    transition: .5s;
+
+    &:hover {
+        cursor: pointer;
+        transition: .5s;
+        background-color: #94d9e93c;
+    }
+}
+
+.buy {
+
+    background-color: #5783db;
+    color: #fff;
+    transition: .5s;
+
+    &:hover {
+        cursor: pointer;
+        transition: .5s;
+        background-color: #2b64d6;
+    }
+}
