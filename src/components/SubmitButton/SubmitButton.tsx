@@ -13,26 +13,25 @@ const SubmitButton = ({ text, custom, onClick, isLoading = false }: Props) => {
     console.log(onClick);
 
     return (
-        <button className={`${styles.btn} ${styles[custom]}`} onClick={onClick}>
-            <div className={styles.loader_container}>
-                {isLoading ?
+        // <button className={`${styles.btn} ${styles[custom]}`} onClick={onClick}>
+        <button className={` ${styles[custom]}`} onClick={onClick}>
+            {isLoading ?
+                <div className={styles.loader_container}>
                     <Loading />
-                    :
-                    <div>
-                        {text === "Adicionar ao carrinho" ?
-                            <div className={styles.addToCartBtn}>
-                                <BsFillCartPlusFill />
-                                {text}
-                            </div>
-                            :
-                            <div>
-                                {text}
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-
+                </div>
+                :
+                <div>
+                    {text === "Adicionar ao carrinho" ?
+                        <div className={styles.addCart}>
+                            <BsFillCartPlusFill />
+                        </div>
+                        :
+                        <div>
+                            {text}
+                        </div>
+                    }
+                </div>
+            }
         </button>
     )
 }

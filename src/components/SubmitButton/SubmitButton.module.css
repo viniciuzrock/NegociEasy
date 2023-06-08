@@ -1,28 +1,42 @@
-.btn {
-  border-radius: 10px;
-  padding: 10px;
-  border: none;
-}
-
 .loader_container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2px;
 }
-.addCart {
-  background-color: rgba(85, 194, 218, 0.2352941176);
-  color: #134fc7;
-  transition: 0.5s;
-  margin-bottom: 10px;
+
+.addToCartBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+  color: #0c5dd6;
+  display: flex;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50px;
+  background-color: rgba(205, 240, 255, 0.8);
 }
-.addCart:hover {
+.addToCartBtn:hover {
   cursor: pointer;
-  transition: 0.5s;
-  background-color: rgba(148, 217, 233, 0.2352941176);
+}
+
+.addCart {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buy {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
   background-color: #5783db;
   color: #fff;
   transition: 0.5s;
