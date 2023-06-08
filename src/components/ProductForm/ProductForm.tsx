@@ -53,8 +53,9 @@ const ProductForm = ({ name, price, image }: Props) => {
                 <div className={styles.infos}>
                     <h2 className={styles.price}>{formatCurrency(price, 'BRL')}</h2>
                     <h2 className={styles.title} id='title'>{name}</h2>
+                    <SubmitButton text='Adicionar ao carrinho' custom='addToCartBtn' onClick={handleAddToCart} />
                     <div className={styles.actions}>
-                        <SubmitButton text='Adicionar ao carrinho' custom='addCart' onClick={handleAddToCart} />
+                        {/* <SubmitButton text='Adicionar ao carrinho' custom='addCart' onClick={handleAddToCart} /> */}
                         <SubmitButton text='Comprar' custom='buy' onClick={handleBuy} />
                     </div>
                 </div>
