@@ -13,9 +13,6 @@ type Props = {
 
 const ProductForm = ({ name, price, image }: Props) => {
 
-    console.log(image);
-
-
     const handleAddToCart = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
 
@@ -33,7 +30,7 @@ const ProductForm = ({ name, price, image }: Props) => {
             await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
                 alert('Compra finalizada!')
                 alert(resp.data)
-                console.log(resp.data)
+                // console.log(resp.data)
             }).catch((e) => {
                 console.log('[Error request]: ' + e)
             })
@@ -55,7 +52,7 @@ const ProductForm = ({ name, price, image }: Props) => {
                 <img className={styles.img} src={image.replace(/\w\.jpg/gi, "W.jpg")} alt="" />
                 <div className={styles.infos}>
                     <h2 className={styles.price}>{formatCurrency(price, 'BRL')}</h2>
-                    <h2 className={styles.title}>{name}</h2>
+                    <h2 className={styles.title} id='title'>{name}</h2>
                     <div className={styles.actions}>
                         <SubmitButton text='Adicionar ao carrinho' custom='addCart' onClick={handleAddToCart} />
                         <SubmitButton text='Comprar' custom='buy' onClick={handleBuy} />

@@ -5,12 +5,13 @@
 }
 
 .card {
+  min-height: -moz-max-content;
+  min-height: max-content;
   background-color: #fff;
   cursor: pointer;
   border: solid 1px #c0c0c0;
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 1px 5px 1px #c0c0c0;
   border-radius: 20px;
   padding: 6px;
   transition: 0.5s;
@@ -18,7 +19,8 @@
 .card:hover {
   cursor: pointer;
   transition: 0.5s;
-  transform: scale(1.1);
+  transform: scale(1.02);
+  box-shadow: 1px 1px 5px 1px #c0c0c0;
 }
 .card .form .img {
   width: 100%;
@@ -44,8 +46,15 @@
 }
 .card .form .infos .title {
   font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #000;
-  font-weight: 500;
+  font-weight: 400;
+  white-space: normal;
+  max-height: 3em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .card .form .infos .actions {
   display: flex;
