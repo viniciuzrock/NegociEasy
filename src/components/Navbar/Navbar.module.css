@@ -10,18 +10,55 @@
 .navbar .logo:hover {
   cursor: pointer;
 }
-.navbar .menu {
-  width: 50%;
+.navbar .searchContainer {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
-.navbar .menu ul {
+.navbar .searchContainer input {
+  width: 40em;
+  font-size: 0.9em;
+  padding: 0.5em;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  border-radius: 10px;
+}
+.navbar .searchContainer button {
+  width: 10em;
+  font-size: 1em;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 1px solid rgba(221, 221, 221, 0.8666666667);
+  transition: 0.5s;
+}
+.navbar .searchContainer button:hover {
+  cursor: pointer;
+  background-color: #d4d3d3;
+  color: #000;
+  transition: 0.5s;
+}
+.navbar .menu {
+  width: 40em;
+  height: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar .submenu ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
 }
-.navbar .menu ul li {
+.navbar .submenu ul li {
   transition: 0.5s;
 }
-.navbar .menu ul li:hover {
+.navbar .submenu ul li:hover {
   cursor: pointer;
   color: #ffffff;
   transition: 0.5s;
