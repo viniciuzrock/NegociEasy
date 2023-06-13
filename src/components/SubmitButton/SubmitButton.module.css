@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2px;
 }
 
 .addToCartBtn {
@@ -40,6 +39,7 @@
   background-color: #5783db;
   color: #fff;
   transition: 0.5s;
+  max-height: 36px;
 }
 .buy:hover {
   cursor: pointer;

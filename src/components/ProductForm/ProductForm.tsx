@@ -15,6 +15,8 @@ const ProductForm = ({ name, price, image }: Props) => {
 
     const handleAddToCart = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
+        console.log('Adicinou ao carrinho');
+
 
     }
 
