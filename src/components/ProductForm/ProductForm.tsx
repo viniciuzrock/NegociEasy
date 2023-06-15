@@ -26,9 +26,11 @@ const ProductForm = ({ name, price, image }: Props) => {
             const data = {
                 name: name,
                 price: price,
-                image: image
+                image: image.replace(/\w\.jpg/gi, "W.jpg")
             }
-            //enviar email como params routes, para envio de cada usuário (Mudar no backend)
+            console.log(data);
+
+            // enviar email como params routes, para envio de cada usuário(Mudar no backend)
             await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
                 alert('Compra finalizada!')
                 alert(resp.data)
