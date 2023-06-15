@@ -9,22 +9,13 @@ function App() {
 
   const handleSearch = (value: string) => {
     setSearchValue(value)
-    console.log(value);
-
   }
 
   return (
     <div className="App">
       <Router>
         <Routes>
-          {/* <Route path='/' element={<Login />} /> */}
           <Route path='/' element={<Auth />} />
-          {/* <Route path='/home' element={
-            <Navbar onSearch={handleSearch}>
-              <Home />
-            </Navbar>}
-          /> */}
-          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/home" element={
             <Navbar onSearch={handleSearch} >
               <Home searchValue={searchValue} />
