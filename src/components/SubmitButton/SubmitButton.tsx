@@ -10,8 +10,6 @@ type Props = {
 }
 
 const SubmitButton = ({ text, custom, onClick, isLoading = false }: Props) => {
-    console.log(onClick);
-
     return (
         // <button className={`${styles.btn} ${styles[custom]}`} onClick={onClick}>
         <button className={` ${styles[custom]}`} onClick={onClick}>
