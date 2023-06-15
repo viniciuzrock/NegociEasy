@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from 'react'
 import styles from './Navbar.module.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 type Props = {
     children: React.ReactNode
@@ -15,8 +15,12 @@ const Navbar = ({ children, onSearch }: Props) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         onSearch(searchValue)
-        console.log(searchValue);
     }
+
+    const handleLogoClick = () => {
+        onSearch(''); // Limpa o valor de pesquisa
+        navigate('/home'); // Navega para a rota /home
+    };
 
     const logOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
         navigate("/")
@@ -25,7 +29,7 @@ const Navbar = ({ children, onSearch }: Props) => {
     return (
         <div >
             <nav className={styles.navbar}>
-                <div className={styles.logo}>
+                <div className={styles.logo} onClick={handleLogoClick}>
                     <h1>NegociEasy</h1>
                 </div>
                 <div className={styles.menu}>

@@ -11,28 +11,36 @@ type Props = {
 }
 
 const Home = ({ searchValue }: Props) => {
-    const [products, setproducts] = useState([])
+    const [products, setProducts] = useState([])
     const userEmail = localStorage.getItem('email')
     const location = useLocation()
 
+
+    const fetchProducts = async (value: string) => {
+        return await axios
+            .get(`http://localhost:3010/api/products/products/${value}`)
+            .then((products) => products.data)
+            .catch((e) => {
+                console.log('[Error Request]: ' + e);
+                return []
+            })
+    }
+
     useEffect(() => {
-        axios.get('http://localhost:3010/api/products/products').then((products) => {
-            setproducts(products.data)
-
-        }).catch((e) => {
-            console.log('[Error Request]: ' + e);
-        })
-    }, [])
-
-    useEffect(() => {
-        console.log('valor' + searchValue);
-
-    }, [])
+        if (!searchValue || searchValue === '') {
+            fetchProducts('all').then((data) => {
+                setProducts(data)
+            })
+        } else {
+            fetchProducts(searchValue).then((data) => {
+                setProducts(data)
+            })
+        }
+    }, [searchValue])
 
     const handleSearch = () => {
         const searchValue = new URLSearchParams(location.search).get('search')
         console.log('HOME - ' + searchValue);
-
     }
 
     useEffect(() => {
