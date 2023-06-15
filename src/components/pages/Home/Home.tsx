@@ -3,20 +3,40 @@ import styles from './Home.module.css'
 import axios from 'axios'
 import ProductCard from '../../ProductCard/ProductCard'
 import Loading from '../../layout/Loading/Loading'
-type Props = {}
+import { useLocation } from 'react-router-dom'
 
-const Home = (props: Props) => {
+
+type Props = {
+    searchValue: string
+}
+
+const Home = ({ searchValue }: Props) => {
     const [products, setproducts] = useState([])
     const userEmail = localStorage.getItem('email')
+    const location = useLocation()
+
     useEffect(() => {
         axios.get('http://localhost:3010/api/products/products').then((products) => {
-            console.log(products.data);
             setproducts(products.data)
 
         }).catch((e) => {
             console.log('[Error Request]: ' + e);
-
         })
+    }, [])
+
+    useEffect(() => {
+        console.log('valor' + searchValue);
+
+    }, [])
+
+    const handleSearch = () => {
+        const searchValue = new URLSearchParams(location.search).get('search')
+        console.log('HOME - ' + searchValue);
+
+    }
+
+    useEffect(() => {
+        handleSearch()
     }, [])
 
     return (
@@ -35,11 +55,9 @@ const Home = (props: Props) => {
                                 />
                             )
                         })
-
                     }
                 </div>
                 :
-
                 <div className={styles.loadContainer}>
                     <Loading darkMode='teste' />
                 </div>
