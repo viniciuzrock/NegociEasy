@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { FormEvent, useState } from 'react'
 import styles from './Navbar.module.css'
 import { useNavigate } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 type Props = {
     children: React.ReactNode
+    onSearch: (searchValue: string) => void
 }
 
-const Header = ({ children }: Props) => {
+const Navbar = ({ children, onSearch }: Props) => {
 
+    const [searchValue, setSearchValue] = useState('')
     const navigate = useNavigate()
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        onSearch(searchValue)
+        console.log(searchValue);
+    }
 
     const logOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
         navigate("/")
@@ -21,17 +29,18 @@ const Header = ({ children }: Props) => {
                     <h1>NegociEasy</h1>
                 </div>
                 <div className={styles.menu}>
-                    <div className={styles.searchContainer}>
-                        <form>
+                    <div >
+                        <form onSubmit={handleSubmit} className={styles.searchContainer}>
                             <input
                                 type="text"
                                 placeholder='Buscar produtos'
-
+                                value={searchValue}
+                                onChange={(e) => setSearchValue(e.target.value)}
                             />
+                            <button type='submit'>
+                                <BsSearch />
+                            </button>
                         </form>
-                        <button type='submit'>
-                            <BsSearch />
-                        </button>
                     </div>
                     <div className={styles.submenu}>
                         <ul>
@@ -46,13 +55,11 @@ const Header = ({ children }: Props) => {
                     <button onClick={logOut} >
                         LogOff
                     </button>
-
                 </div>
             </nav>
             <main>{children}</main>
         </div>
-
     )
 }
 
-export default Header
+export default Navbar
