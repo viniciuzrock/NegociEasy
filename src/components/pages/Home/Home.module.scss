@@ -3,24 +3,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    position: relative;
+
+    .homeData {
+        padding: 100px 20px 10px;
+        width: 30em;
+    }
 
     .container {
-        padding: 120px 20px 50px;
+        padding: 10px 20px 50px;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
-        // display: flex;
-        // width: 70%;
-        // flex-wrap: wrap;
-        // justify-content: center;
-        // margin: auto;
     }
 
     .loadContainer {
         display: flex;
         align-items: center;
         justify-content: center;
-        // background-color: #a1a1a1;
         height: 100vh;
         width: 100%;
     }
