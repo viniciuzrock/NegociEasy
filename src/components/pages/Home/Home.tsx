@@ -11,10 +11,9 @@ type Props = {
 
 const Home = () => {
     const [products, setProducts] = useState([])
+
     const userEmail = localStorage.getItem('email')
-    const { searchProduct } = useContext(AppContext)
-    const { searchValue } = useContext(AppContext)
-    const { setSearchValue } = useContext(AppContext)
+    const { searchProduct, searchValue, setSearchValue, loading, setLoading } = useContext(AppContext)
 
     const fetchProducts = async (value: string) => {
         return await axios
@@ -31,11 +30,13 @@ const Home = () => {
             fetchProducts('all').then((data) => {
                 setProducts(data)
                 setSearchValue('')
+                setLoading(false)
             })
         } else {
             fetchProducts(searchProduct).then((data) => {
                 setProducts(data)
                 setSearchValue('')
+                setLoading(false)
             })
         }
     }, [searchProduct])
@@ -45,7 +46,11 @@ const Home = () => {
             <div className={styles.homeData}>
                 <h2>Exibindo resultados para: {searchProduct}</h2>
             </div>
-            {products.length > 0 ?
+            {loading ?
+                <div className={styles.loadContainer}>
+                    <Loading darkMode='teste' />
+                </div>
+                :
                 <div className={styles.container}>
                     {products.length > 0 &&
                         products.map((product: any) => {
@@ -59,10 +64,6 @@ const Home = () => {
                             )
                         })
                     }
-                </div>
-                :
-                <div className={styles.loadContainer}>
-                    <Loading darkMode='teste' />
                 </div>
             }
         </div>

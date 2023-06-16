@@ -5,12 +5,15 @@ const Provider = ({ children }) => {
 
     const [searchProduct, setSearchProduct] = useState('')
     const [searchValue, setSearchValue] = useState('')
+    const [loading, setLoading] = useState(true)
 
     const value = {
         searchProduct,
         setSearchProduct,
         searchValue,
-        setSearchValue
+        setSearchValue,
+        loading,
+        setLoading
     }
 
     return (

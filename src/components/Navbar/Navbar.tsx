@@ -8,14 +8,13 @@ type Props = {
 
 const Navbar = () => {
 
-    const { setSearchProduct } = useContext(AppContext)
-    const { searchValue } = useContext(AppContext)
-    const { setSearchValue } = useContext(AppContext)
+    const { setSearchProduct, searchValue, setSearchValue, loading, setLoading } = useContext(AppContext)
 
     const navigate = useNavigate()
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setLoading(true)
         setSearchProduct(searchValue)
     }
 

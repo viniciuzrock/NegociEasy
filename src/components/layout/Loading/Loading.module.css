@@ -1,5 +1,6 @@
 .teste {
   font-size: 4rem;
+  margin: -150px auto 0;
   animation: spin 1s linear infinite;
   display: flex;
 }
