@@ -45,7 +45,7 @@ const Home = () => {
         <div className={styles.home}>
             <div className={styles.homeData}>
                 {searchProduct &&
-                    <h2>Exibindo resultados para: {searchProduct}</h2>
+                    <h3>Exibindo resultados para: {searchProduct}</h3>
                 }
             </div>
             {loading ?
