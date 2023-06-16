@@ -1,25 +1,26 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useState, useEffect, useContext } from 'react'
 import styles from './Navbar.module.css'
 import { useNavigate, Link } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
+import AppContext from '../../context/AppContext'
 type Props = {
-    children: React.ReactNode
-    onSearch: (searchValue: string) => void
 }
 
-const Navbar = ({ children, onSearch }: Props) => {
+const Navbar = () => {
 
-    const [searchValue, setSearchValue] = useState('')
+    const { setSearchProduct } = useContext(AppContext)
+    const { searchValue } = useContext(AppContext)
+    const { setSearchValue } = useContext(AppContext)
+
     const navigate = useNavigate()
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onSearch(searchValue)
+        setSearchProduct(searchValue)
     }
 
     const handleLogoClick = () => {
-        onSearch(''); // Limpa o valor de pesquisa
-        navigate('/home'); // Navega para a rota /home
+        navigate('/home');
     };
 
     const logOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -61,7 +62,6 @@ const Navbar = ({ children, onSearch }: Props) => {
                     </button>
                 </div>
             </nav>
-            <main>{children}</main>
         </div>
     )
 }

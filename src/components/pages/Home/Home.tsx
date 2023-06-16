@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import styles from './Home.module.css'
 import axios from 'axios'
 import ProductCard from '../../ProductCard/ProductCard'
 import Loading from '../../layout/Loading/Loading'
-import { useLocation } from 'react-router-dom'
+import AppContext from '../../../context/AppContext'
 
 
 type Props = {
-    searchValue: string
 }
 
-const Home = ({ searchValue }: Props) => {
+const Home = () => {
     const [products, setProducts] = useState([])
     const userEmail = localStorage.getItem('email')
-    const location = useLocation()
-
+    const { searchProduct } = useContext(AppContext)
+    const { searchValue } = useContext(AppContext)
+    const { setSearchValue } = useContext(AppContext)
 
     const fetchProducts = async (value: string) => {
         return await axios
@@ -27,29 +27,24 @@ const Home = ({ searchValue }: Props) => {
     }
 
     useEffect(() => {
-        if (!searchValue || searchValue === '') {
+        if (!searchProduct || searchProduct === '') {
             fetchProducts('all').then((data) => {
                 setProducts(data)
+                setSearchValue('')
             })
         } else {
-            fetchProducts(searchValue).then((data) => {
+            fetchProducts(searchProduct).then((data) => {
                 setProducts(data)
+                setSearchValue('')
             })
         }
-    }, [searchValue])
-
-    const handleSearch = () => {
-        const searchValue = new URLSearchParams(location.search).get('search')
-        console.log('HOME - ' + searchValue);
-    }
-
-    useEffect(() => {
-        handleSearch()
-    }, [])
+    }, [searchProduct])
 
     return (
         <div className={styles.home}>
-            <h1>Olá {userEmail}</h1>
+            <div className={styles.homeData}>
+                <h2>Exibindo resultados para: {searchProduct}</h2>
+            </div>
             {products.length > 0 ?
                 <div className={styles.container}>
                     {products.length > 0 &&
