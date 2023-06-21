@@ -14,10 +14,6 @@ const Loading = ({ darkMode }: Props) => {
                 <BiLoaderAlt className={`${styles.loading}`} />
             }
         </div>
-        // <div className={`${styles.lds_ringa} `}>
-
-        //     <div className={`${styles.lds_ring} ${styles[darkMode]}`}><div></div><div></div><div></div><div></div></div>
-        // </div>
     )
 }
 

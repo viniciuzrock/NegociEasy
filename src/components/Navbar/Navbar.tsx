@@ -3,6 +3,7 @@ import styles from './Navbar.module.css'
 import { useNavigate, Link } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import AppContext from '../../context/AppContext'
+import { CgLogOut } from 'react-icons/cg'
 type Props = {
 }
 
@@ -57,7 +58,8 @@ const Navbar = () => {
                 </div>
                 <div className={styles.actions} >
                     <button onClick={logOut} >
-                        LogOff
+                        {/* LogOff */}
+                        <CgLogOut />
                     </button>
                 </div>
             </nav>

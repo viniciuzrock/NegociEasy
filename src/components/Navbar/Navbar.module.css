@@ -68,9 +68,12 @@
 .navbar .actions button {
   width: 100%;
   border: none;
-  font-size: 16px;
+  font-size: 30px;
   color: #61dafb;
   background-color: transparent;
+}
+.navbar .actions button i {
+  background-color: red;
 }
 .navbar .actions button:hover {
   cursor: pointer;

@@ -2,6 +2,7 @@
     background-color: #282c34;
     color: #61dafb;
     display: flex;
+    // justify-content: space-around;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
@@ -96,9 +97,13 @@
         button {
             width: 100%;
             border: none;
-            font-size: 16px;
+            font-size: 30px;
             color: #61dafb;
             background-color: transparent;
+
+            i {
+                background-color: red;
+            }
 
             &:hover {
                 cursor: pointer;

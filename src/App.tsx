@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/pages/Home/Home';
 import Auth from './components/pages/Auth/Auth';
 import Provider from './context/Provider';
+import CartField from './components/Cart/CartField/CartField';
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
             <Provider>
               <Navbar />
               <Home />
+              <CartField />
             </Provider>
           }
           />

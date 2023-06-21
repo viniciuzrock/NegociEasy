@@ -34,7 +34,6 @@ const ProductForm = ({ name, price, image }: Props) => {
             await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
                 alert('Compra finalizada!')
                 alert(resp.data)
-                // console.log(resp.data)
             }).catch((e) => {
                 console.log('[Error request]: ' + e)
             })
@@ -59,7 +58,6 @@ const ProductForm = ({ name, price, image }: Props) => {
                     <h2 className={styles.title} id='title'>{name}</h2>
                     <SubmitButton text='Adicionar ao carrinho' custom='addToCartBtn' onClick={handleAddToCart} />
                     <div className={styles.actions}>
-                        {/* <SubmitButton text='Adicionar ao carrinho' custom='addCart' onClick={handleAddToCart} /> */}
                         <SubmitButton text='Comprar' custom='buy' onClick={handleBuy} />
                     </div>
                 </div>
