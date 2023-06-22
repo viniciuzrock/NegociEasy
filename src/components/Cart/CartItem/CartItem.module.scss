@@ -32,23 +32,20 @@
             position: absolute;
             top: 0;
             right: 0;
+            margin-right: 5px;
             color: #d83232;
             font-size: 1.4rem;
-            width: 45px;
-            height: 45px;
             display: flex;
             font-size: 28px;
             justify-content: center;
             align-items: center;
             border: none;
-            // border-radius: 50px;
-            // background-color: rgba(255, 205, 211, 0.8);
-            // border: solid 1px;
-            // border-radius: 50%;
             background: none;
             cursor: pointer;
         }
     }
+}
 
-
+.cart_item:last-child {
+    border: none;
 }

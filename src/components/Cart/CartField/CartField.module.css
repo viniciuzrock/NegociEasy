@@ -6,5 +6,24 @@
   position: fixed;
   top: 0;
   right: 0;
-  padding: 100px 20px 20px;
-}/*# sourceMappingURL=Cart.module.css.map */
+  padding: 100px 0px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(110%, 0);
+  transition: all 400ms ease;
+}
+.cart .cart_items {
+  flex-grow: 1;
+  overflow: auto;
+}
+.cart .cart_resume {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 35px 0 15px;
+  border-top: 1px solid #ddd;
+}
+
+.cart_active {
+  transform: translate(0, 0);
+}/*# sourceMappingURL=CartField.module.css.map */

@@ -26,10 +26,9 @@
   position: absolute;
   top: 0;
   right: 0;
+  margin-right: 5px;
   color: #d83232;
   font-size: 1.4rem;
-  width: 45px;
-  height: 45px;
   display: flex;
   font-size: 28px;
   justify-content: center;
@@ -37,4 +36,8 @@
   border: none;
   background: none;
   cursor: pointer;
+}
+
+.cart_item:last-child {
+  border: none;
 }/*# sourceMappingURL=CartItem.module.css.map */
