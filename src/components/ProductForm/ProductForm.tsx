@@ -1,23 +1,29 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import styles from './ProductForm.module.css'
 import SubmitButton from '../SubmitButton/SubmitButton'
 import axios from 'axios'
 import formatCurrency from '../../utils/formatCurrency'
+import AppContext from '../../context/AppContext'
 
 type Props = {
     name: string,
     price: number,
     image: string
-
 }
 
 const ProductForm = ({ name, price, image }: Props) => {
+    const [isAddToCartVisible, setAddToCartVisible] = useState(false)
+    const { cartItems, setCartItems } = useContext(AppContext)
 
     const handleAddToCart = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        console.log('Adicinou ao carrinho');
-
-
+        const data = {
+            name: name,
+            price: price,
+            image: image
+        }
+        // ... => remove array's items for other array
+        setCartItems((prevCartItems: any) => [...prevCartItems, data])
     }
 
     const handleBuy = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -40,23 +46,29 @@ const ProductForm = ({ name, price, image }: Props) => {
             console.log('Comprou');
         } catch (error) {
             console.log('[Error form]: ' + error);
-
         }
     }
 
-    // Trocar inputs => transformar em label e deixar os inputs no formato hidden
+    const handleMouseEnter = () => {
+        setAddToCartVisible(true)
+    }
+
+    const handleMouseLeave = () => {
+        setAddToCartVisible(false)
+    }
+
     return (
-        <section className={styles.card}>
+        <section className={styles.card} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <form className={styles.form}>
-                {/* <input type="image" className={styles.img} src={image} alt="" name='image' /> */}
-                {/* ver como pegar imagem de formulário */}
                 <input type="hidden" className={styles.txt} value={name}></input>
                 <input type="hidden" className={styles.txt} value={'R$ ' + price}></input>
                 <img className={styles.img} src={image.replace(/\w\.jpg/gi, "W.jpg")} alt="" />
                 <div className={styles.infos}>
                     <h2 className={styles.price}>{formatCurrency(price, 'BRL')}</h2>
                     <h2 className={styles.title} id='title'>{name}</h2>
-                    <SubmitButton text='Adicionar ao carrinho' custom='addToCartBtn' onClick={handleAddToCart} />
+                    {isAddToCartVisible && (
+                        <SubmitButton text='Adicionar ao carrinho' custom='addToCartBtn' onClick={handleAddToCart} />
+                    )}
                     <div className={styles.actions}>
                         <SubmitButton text='Comprar' custom='buy' onClick={handleBuy} />
                     </div>
