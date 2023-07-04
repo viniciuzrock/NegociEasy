@@ -26,4 +26,5 @@
 
 .cart_active {
   transform: translate(0, 0);
+  transition: all 400ms ease;
 }/*# sourceMappingURL=CartField.module.css.map */

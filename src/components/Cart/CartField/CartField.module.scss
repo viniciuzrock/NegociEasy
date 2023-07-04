@@ -29,6 +29,7 @@
 
 .cart_active {
     transform: translate(0, 0);
+    transition: all 400ms ease;
 }
 
 // .cart_items .cart_item:last-child {

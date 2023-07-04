@@ -6,25 +6,25 @@ import formatCurrency from '../../../utils/formatCurrency'
 type Props = {}
 
 const Cart = (props: Props) => {
-    const { cartItems } = useContext(AppContext)
+    const { cartItems, isCartVisible, setCartItems } = useContext(AppContext)
 
     const totalPrice = cartItems.reduce((acc: number, item: typeof cartItems[0]) => {
         return item.price + acc
     }, 0)
 
-
     return (
-        // ${styles.cart_active} --pra ativar o menu lateral
-        <section className={`${styles.cart}`}>
+        <section className={`${styles.cart} ${isCartVisible ? styles.cart_active : ''}`}>
             <div className={styles.cart_items}>
                 {
                     cartItems.map((cartItem: any) => {
+
                         return (
                             <CartItem
+                                key={cartItem.id}
                                 thumbnail={cartItem.image}
                                 name={cartItem.name}
                                 price={cartItem.price}
-                                key={cartItem.id}
+                                id={cartItem.id}
                             />
                         )
                     })
@@ -35,8 +35,7 @@ const Cart = (props: Props) => {
                     formatCurrency(totalPrice, 'BRL')
                 ) : (
                     <span> Seu carrinho está vazio</span>
-                )
-                }
+                )}
             </div>
         </section>
     )

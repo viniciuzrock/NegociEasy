@@ -9,9 +9,10 @@ type Props = {
     name: string,
     price: number,
     image: string
+    id: any
 }
 
-const ProductForm = ({ name, price, image }: Props) => {
+const ProductForm = ({ name, price, image, id }: Props) => {
     const [isAddToCartVisible, setAddToCartVisible] = useState(false)
     const { cartItems, setCartItems } = useContext(AppContext)
 
@@ -20,7 +21,8 @@ const ProductForm = ({ name, price, image }: Props) => {
         const data = {
             name: name,
             price: price,
-            image: image
+            image: image,
+            id: id
         }
         // ... => remove array's items for other array
         setCartItems((prevCartItems: any) => [...prevCartItems, data])

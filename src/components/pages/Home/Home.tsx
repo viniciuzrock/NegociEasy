@@ -61,6 +61,7 @@ const Home = () => {
                                     name={product.title}
                                     price={product.price}
                                     image={product.thumbnail}
+                                    id={product.id}
                                     key={product.id}
                                 />
                             )

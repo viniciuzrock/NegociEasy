@@ -7,6 +7,7 @@ const Provider = ({ children }) => {
     const [searchValue, setSearchValue] = useState('')
     const [loading, setLoading] = useState(true)
     const [cartItems, setCartItems] = useState([])
+    const [isCartVisible, setIsCartVisible] = useState(false)
 
     const value = {
         searchProduct,
@@ -16,7 +17,9 @@ const Provider = ({ children }) => {
         loading,
         setLoading,
         cartItems,
-        setCartItems
+        setCartItems,
+        isCartVisible,
+        setIsCartVisible
     }
 
     return (

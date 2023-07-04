@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import AppContext from '../../context/AppContext'
 import { CgLogOut } from 'react-icons/cg'
+import CartButton from '../Cart/CartButton/CartButton'
 type Props = {
 }
 
@@ -55,6 +56,9 @@ const Navbar = () => {
                             <li>Contato</li>
                         </ul>
                     </div>
+                </div>
+                <div>
+                    <CartButton />
                 </div>
                 <div className={styles.actions} >
                     <button onClick={logOut} >
