@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #ebebeb;
+}
+
+.container_login {
+    width: 35em;
+    height: 30em;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+.container_register {
+    background-color: #5783db;
+    width: 20em;
+    height: 30em;
+}

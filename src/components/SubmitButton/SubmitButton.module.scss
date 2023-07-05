@@ -27,8 +27,6 @@
     }
 }
 
-
-
 .addCart {
     margin: 0;
     padding: 0;
@@ -38,7 +36,6 @@
 }
 
 .buy {
-
     border-radius: 5px;
     padding: 10px;
     border: none;
@@ -47,7 +44,8 @@
     font-size: 15px;
     font-weight: 500;
     transition: .5s;
-    // max-height: 36px;
+    height: 40px;
+    max-height: 40px;
 
     &:hover {
         cursor: pointer;
