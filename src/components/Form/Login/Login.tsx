@@ -50,7 +50,7 @@ const Login = (props: Props) => {
             <form className={styles.form} onSubmit={login}>
                 <div className={styles.input_container}>
                     <label htmlFor="email">E-mail</label>
-                    <input type="email" name="email" placeholder='mail' onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" name="email" placeholder='E-mail' onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className={styles.input_container}>
                     <label htmlFor="password">Senha</label>

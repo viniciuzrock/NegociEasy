@@ -8,8 +8,10 @@
 .form input {
   padding: 8px 15px;
   margin-bottom: 1.5em;
-  border-radius: 10px;
-  border: 1px solid #282c34;
+  border-radius: 5px;
+  background-color: #ebebeb;
+  outline: none;
+  border: none;
 }
 
 .form input[type=submit] {
@@ -32,6 +34,6 @@
 }
 
 .input_container label {
-  font-weight: bold;
+  font-weight: 400;
   margin-bottom: 0.4em;
 }/*# sourceMappingURL=Login.module.css.map */

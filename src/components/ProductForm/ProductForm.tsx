@@ -72,7 +72,7 @@ const ProductForm = ({ name, price, image, id }: Props) => {
                         <SubmitButton text='Adicionar ao carrinho' custom='addToCartBtn' onClick={handleAddToCart} />
                     )}
                     <div className={styles.actions}>
-                        <SubmitButton text='Comprar' custom='buy' onClick={handleBuy} />
+                        {/* <SubmitButton text='Comprar' custom='buy' onClick={handleBuy} /> */}
                     </div>
                 </div>
             </form>

@@ -48,19 +48,21 @@ const Navbar = () => {
                             </button>
                         </form>
                     </div>
-                    <div className={styles.submenu}>
+
+                    <div>
+                        <CartButton />
+                    </div>
+                    {/* <div className={styles.submenu}>
                         <ul>
                             <li>Categorias</li>
                             <li>Minhas compras</li>
                             <li>Carrinho</li>
                             <li>Contato</li>
                         </ul>
-                    </div>
-                </div>
-                <div>
-                    <CartButton />
+                    </div> */}
                 </div>
                 <div className={styles.actions} >
+                    {/* <CartButton /> */}
                     <button onClick={logOut} >
                         {/* LogOff */}
                         <CgLogOut />

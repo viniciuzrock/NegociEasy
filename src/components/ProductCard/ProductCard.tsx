@@ -14,7 +14,6 @@ const ProductCard = ({ name, price, image, id }: Props) => {
         <div>
             <ProductForm name={name} price={price} image={image} id={id} />
         </div>
-
     )
 }
 

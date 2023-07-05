@@ -46,11 +46,11 @@
   transition: 0.5s;
 }
 .navbar .menu {
-  width: 40em;
-  height: 4em;
+  width: 50%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .navbar .submenu ul {
   display: flex;
@@ -65,8 +65,14 @@
   color: #ffffff;
   transition: 0.5s;
 }
+.navbar .actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 10%;
+}
 .navbar .actions button {
-  width: 100%;
+  display: flex;
   border: none;
   font-size: 30px;
   color: #61dafb;

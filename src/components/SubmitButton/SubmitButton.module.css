@@ -33,15 +33,14 @@
 }
 
 .buy {
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
   border: none;
   background-color: #5783db;
   color: #fff;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   transition: 0.5s;
-  max-height: 36px;
 }
 .buy:hover {
   cursor: pointer;
