@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import Loading from '../../layout/Loading/Loading'
 import SubmitButton from '../../SubmitButton/SubmitButton'
 import { HiOutlineMail, HiOutlineLockClosed } from 'react-icons/hi'
+import Message from '../../layout/Message/Message'
 type Props = {}
 
 const Login = (props: Props) => {
@@ -13,6 +14,8 @@ const Login = (props: Props) => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [message, setMessage] = useState('')
+    const [type, setType] = useState('')
 
     const login = async (e: FormEvent<HTMLFormElement>) => {
         try {
@@ -22,26 +25,25 @@ const Login = (props: Props) => {
                 email: email,
                 password: password
             }
-            console.log(data);
 
             await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
-                console.log(response.data)
-
-                localStorage.setItem('email', response.data.data.email)
+                // localStorage.setItem('email', response.data.data.email)
+                setMessage('Carregando...')//AJUSTAR
+                setType('success')
                 navigate('/home', {
                     state: {
-                        user: response.data
-                    }
+                        user: response.data,
+                    },
                 })
             }).catch((e) => {
-                alert(e)
                 setIsLoading(false)
+                setMessage('Acesso negado, verifique o e-mail e senha.')
+                setType('error')
                 console.log('[ Error request]:' + e)
 
             })
         } catch (error) {
             console.log('[ Error Submit ]:' + error);
-
         }
     }
 
@@ -65,6 +67,7 @@ const Login = (props: Props) => {
                 </div>
                 <SubmitButton text='Entrar' custom='buy' isLoading={isLoading} />
             </form>
+            {message && <Message type={type} message={message} />}
         </div >
     )
 }
