@@ -1,56 +1,64 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import styles from './Login.module.css'
+import styles from './Register.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../../layout/Loading/Loading'
 import SubmitButton from '../../SubmitButton/SubmitButton'
 import { HiOutlineMail, HiOutlineLockClosed } from 'react-icons/hi'
+import Message from '../../layout/Message/Message'
 type Props = {}
 
-const Login = (props: Props) => {
+const Register = (props: Props) => {
 
     const navigate = useNavigate()
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [message, setMessage] = useState('')
+    const [type, setType] = useState('')
 
-    const login = async (e: FormEvent<HTMLFormElement>) => {
+    const register = async (e: FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault()
+            setMessage('')
             setIsLoading(true)
             const data = {
                 email: email,
                 password: password
             }
-            console.log(data);
 
-            await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
-                console.log(response.data)
-
+            await axios.post('http://localhost:3010/api/users/register', data).then((response) => {
                 localStorage.setItem('email', response.data.data.email)
+                console.log(response.data.data.email);
+                setMessage('Carregando...')//AJUSTAR
+                setType('success')
                 navigate('/home', {
                     state: {
                         user: response.data
                     }
                 })
             }).catch((e) => {
-                alert(e)
                 setIsLoading(false)
-                console.log('[ Error request]:' + e)
-
+                if (e.response.data.message === 'auth/weak-password') {
+                    setMessage('A senha deve ter pelo menos 6 dígitos.')
+                    setType('error')
+                    return
+                }
+                setMessage('Estamos com problemas, tente novamente mais tarde.')
+                setType('error')
+                return
             })
         } catch (error) {
             console.log('[ Error Submit ]:' + error);
-
         }
     }
 
     return (
         <div className={styles.container}>
             <div className={styles.container_title}>
-                <h2>Login</h2>
+                <span>Cadastro</span>
             </div>
-            <form className={styles.form} onSubmit={login}>
+            <form className={styles.form} onSubmit={register}>
                 <div className={styles.input_container}>
                     <div className={styles.icon_input}>
                         <HiOutlineMail />
@@ -63,10 +71,11 @@ const Login = (props: Props) => {
                     </div>
                     <input type="password" name="password" placeholder='Senha' onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <SubmitButton text='Entrar' custom='buy' isLoading={isLoading} />
+                <SubmitButton text='Registrar' custom='register' isLoading={isLoading} />
             </form>
+            {message && <Message type={type} message={message} />}
         </div >
     )
 }
 
-export default Login
+export default Register

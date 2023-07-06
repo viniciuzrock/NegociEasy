@@ -20,6 +20,7 @@ const Login = (props: Props) => {
     const login = async (e: FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault()
+            setMessage('')
             setIsLoading(true)
             const data = {
                 email: email,
@@ -27,7 +28,9 @@ const Login = (props: Props) => {
             }
 
             await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
-                // localStorage.setItem('email', response.data.data.email)
+                localStorage.setItem('email', response.data.data.email)
+                console.log(response.data.data.email);
+
                 setMessage('Carregando...')//AJUSTAR
                 setType('success')
                 navigate('/home', {
@@ -37,10 +40,9 @@ const Login = (props: Props) => {
                 })
             }).catch((e) => {
                 setIsLoading(false)
-                setMessage('Acesso negado, verifique o e-mail e senha.')
+                setMessage(e.response.data.message)
                 setType('error')
-                console.log('[ Error request]:' + e)
-
+                return
             })
         } catch (error) {
             console.log('[ Error Submit ]:' + error);

@@ -5,7 +5,12 @@
 .container .container_title {
   font-size: x-large;
   align-self: center;
-  margin-top: 2em;
+  margin-top: 2.3em;
+}
+.container .container_title span {
+  margin-top: 1.5em;
+  font-size: 30px;
+  align-self: center;
 }
 
 .form {
@@ -19,7 +24,7 @@
 
 .form input {
   padding: 8px 5px;
-  background-color: red;
+  width: 100%;
   border-radius: 5px;
   background-color: #ebebeb;
   outline: none;
@@ -54,9 +59,10 @@
   justify-content: center;
   align-items: center;
   font-size: 25px;
+  color: #000;
 }
 
 .input_container label {
   font-weight: 400;
   margin-bottom: 0.4em;
-}/*# sourceMappingURL=Login.module.css.map */
+}/*# sourceMappingURL=Register.module.css.map */
