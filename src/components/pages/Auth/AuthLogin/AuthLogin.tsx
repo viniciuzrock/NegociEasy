@@ -1,19 +1,20 @@
 import React from 'react'
 import Login from '../../../Form/Login/Login'
 import styles from './AuthLogin.module.css'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
-const Auth = (props: Props) => {
+const AuthLogin = (props: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.container_register}>
                 <span>
                     Crie sua conta
                 </span>
-                <button>
+                <Link to='/register' className={styles.link_button}>
                     Registre-se
-                </button>
+                </Link>
             </div>
             <div className={styles.container_login}>
                 <Login />
@@ -22,4 +23,4 @@ const Auth = (props: Props) => {
     )
 }
 
-export default Auth
+export default AuthLogin

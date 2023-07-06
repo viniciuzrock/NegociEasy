@@ -53,3 +53,21 @@
         background-color: #2b64d6;
     }
 }
+
+.register {
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .5s;
+    height: 40px;
+    max-height: 40px;
+
+    &:hover {
+        cursor: pointer;
+        transition: .5s;
+    }
+}

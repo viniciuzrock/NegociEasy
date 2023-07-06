@@ -7,17 +7,18 @@
     background-color: #ebebeb;
 }
 
-.container_login {
+.container_register {
     width: 35em;
     height: 30em;
-    background-color: #fff;
+    background-color: #5783db;
     text-decoration: none;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    color: #fff;
 }
 
-.container_register {
-    background-color: #5783db;
+.container_login {
+    background-color: #fff;
     width: 20em;
     height: 30em;
     padding: 20px;
@@ -25,7 +26,7 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    color: white;
+    color: #000;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 
@@ -42,9 +43,9 @@
         font-weight: 400;
         font-size: 15px;
         margin-bottom: 10em;
-        background-color: #fff;
+        background-color: #5783db;
         cursor: pointer;
+        color: #fff;
         text-decoration: none;
-        color: #000
     }
 }
