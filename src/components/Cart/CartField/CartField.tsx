@@ -23,7 +23,8 @@ const Cart = (props: Props) => {
             cartItems: cartItems,
             email: email
         }
-        console.log(data);
+        console.log('email');
+        console.log(email);
         await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
             alert('Compra finalizada!')
             alert(resp.data)
