@@ -15,10 +15,16 @@ const Cart = (props: Props) => {
         return item.price + acc
     }, 0)
 
+    const email = localStorage.getItem('email')
+
     const handleBuy = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        const data = cartItems
-        console.log(data);
+        const data = {
+            cartItems: cartItems,
+            email: email
+        }
+        console.log('email');
+        console.log(email);
         await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
             alert('Compra finalizada!')
             alert(resp.data)

@@ -39,8 +39,14 @@ const Register = (props: Props) => {
                 })
             }).catch((e) => {
                 setIsLoading(false)
+                console.log(e.response.data.message);
+
                 if (e.response.data.message === 'auth/weak-password') {
                     setMessage('A senha deve ter pelo menos 6 dígitos.')
+                    setType('error')
+                    return
+                } else if (e.response.data.message === 'auth/email-already-in-use') {
+                    setMessage('O e-mail informado já está em uso.')
                     setType('error')
                     return
                 }
