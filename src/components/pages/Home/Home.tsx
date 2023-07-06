@@ -44,6 +44,7 @@ const Home = () => {
     return (
         <div className={styles.home}>
             <div className={styles.homeData}>
+                {userEmail}
                 {searchProduct &&
                     <h3>Exibindo resultados para: {searchProduct}</h3>
                 }
@@ -61,6 +62,7 @@ const Home = () => {
                                     name={product.title}
                                     price={product.price}
                                     image={product.thumbnail}
+                                    id={product.id}
                                     key={product.id}
                                 />
                             )

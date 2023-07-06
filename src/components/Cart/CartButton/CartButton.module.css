@@ -1,0 +1,27 @@
+.cart_button {
+  color: #61dafb;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+.cart_button .cart_status {
+  background-color: red;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=CartButton.module.css.map */

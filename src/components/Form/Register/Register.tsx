@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import styles from './Login.module.css'
+import styles from './Register.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../../layout/Loading/Loading'
@@ -8,7 +8,7 @@ import { HiOutlineMail, HiOutlineLockClosed } from 'react-icons/hi'
 import Message from '../../layout/Message/Message'
 type Props = {}
 
-const Login = (props: Props) => {
+const Register = (props: Props) => {
 
     const navigate = useNavigate()
     const [email, setEmail] = useState<string>('')
@@ -17,7 +17,7 @@ const Login = (props: Props) => {
     const [message, setMessage] = useState('')
     const [type, setType] = useState('')
 
-    const login = async (e: FormEvent<HTMLFormElement>) => {
+    const register = async (e: FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault()
             setMessage('')
@@ -27,20 +27,24 @@ const Login = (props: Props) => {
                 password: password
             }
 
-            await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
+            await axios.post('http://localhost:3010/api/users/register', data).then((response) => {
                 localStorage.setItem('email', response.data.data.email)
                 console.log(response.data.data.email);
-
                 setMessage('Carregando...')//AJUSTAR
                 setType('success')
                 navigate('/home', {
                     state: {
-                        user: response.data,
-                    },
+                        user: response.data
+                    }
                 })
             }).catch((e) => {
                 setIsLoading(false)
-                setMessage(e.response.data.message)
+                if (e.response.data.message === 'auth/weak-password') {
+                    setMessage('A senha deve ter pelo menos 6 dígitos.')
+                    setType('error')
+                    return
+                }
+                setMessage('Estamos com problemas, tente novamente mais tarde.')
                 setType('error')
                 return
             })
@@ -52,9 +56,9 @@ const Login = (props: Props) => {
     return (
         <div className={styles.container}>
             <div className={styles.container_title}>
-                <span>Login</span>
+                <span>Cadastro</span>
             </div>
-            <form className={styles.form} onSubmit={login}>
+            <form className={styles.form} onSubmit={register}>
                 <div className={styles.input_container}>
                     <div className={styles.icon_input}>
                         <HiOutlineMail />
@@ -67,11 +71,11 @@ const Login = (props: Props) => {
                     </div>
                     <input type="password" name="password" placeholder='Senha' onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <SubmitButton text='Entrar' custom='buy' isLoading={isLoading} />
+                <SubmitButton text='Registrar' custom='register' isLoading={isLoading} />
             </form>
             {message && <Message type={type} message={message} />}
         </div >
     )
 }
 
-export default Login
+export default Register

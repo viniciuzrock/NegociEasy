@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 .container .container_title {
   font-size: x-large;
@@ -60,9 +59,10 @@
   justify-content: center;
   align-items: center;
   font-size: 25px;
+  color: #000;
 }
 
 .input_container label {
   font-weight: 400;
   margin-bottom: 0.4em;
-}/*# sourceMappingURL=Login.module.css.map */
+}/*# sourceMappingURL=Register.module.css.map */

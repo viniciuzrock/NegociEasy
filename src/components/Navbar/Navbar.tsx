@@ -3,6 +3,8 @@ import styles from './Navbar.module.css'
 import { useNavigate, Link } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import AppContext from '../../context/AppContext'
+import { CgLogOut } from 'react-icons/cg'
+import CartButton from '../Cart/CartButton/CartButton'
 type Props = {
 }
 
@@ -46,18 +48,24 @@ const Navbar = () => {
                             </button>
                         </form>
                     </div>
-                    <div className={styles.submenu}>
+
+                    <div>
+                        <CartButton />
+                    </div>
+                    {/* <div className={styles.submenu}>
                         <ul>
                             <li>Categorias</li>
                             <li>Minhas compras</li>
                             <li>Carrinho</li>
                             <li>Contato</li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.actions} >
+                    {/* <CartButton /> */}
                     <button onClick={logOut} >
-                        LogOff
+                        {/* LogOff */}
+                        <CgLogOut />
                     </button>
                 </div>
             </nav>

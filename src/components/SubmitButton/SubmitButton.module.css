@@ -33,16 +33,36 @@
 }
 
 .buy {
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
   border: none;
   background-color: #5783db;
   color: #fff;
+  font-size: 15px;
+  font-weight: 500;
   transition: 0.5s;
-  max-height: 36px;
+  height: 40px;
+  max-height: 40px;
 }
 .buy:hover {
   cursor: pointer;
   transition: 0.5s;
   background-color: #2b64d6;
+}
+
+.register {
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.5s;
+  height: 40px;
+  max-height: 40px;
+}
+.register:hover {
+  cursor: pointer;
+  transition: 0.5s;
 }/*# sourceMappingURL=SubmitButton.module.css.map */
