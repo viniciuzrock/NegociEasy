@@ -46,6 +46,9 @@ const Login = (props: Props) => {
             })
         } catch (error) {
             console.log('[ Error Submit ]:' + error);
+            setIsLoading(false)
+            setMessage('Acesso indisponível no momento.')
+            setType('error')
         }
     }
 
