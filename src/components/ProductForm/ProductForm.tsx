@@ -39,7 +39,8 @@ const ProductForm = ({ name, price, image, id }: Props) => {
             console.log(data);
 
             // enviar email como params routes, para envio de cada usuário(Mudar no backend)
-            await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
+            // await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
+            await axios.post('https://aviza.vercel.app/api/products/completePurchase', data).then((resp) => {
                 alert('Compra finalizada!')
                 alert(resp.data)
             }).catch((e) => {
