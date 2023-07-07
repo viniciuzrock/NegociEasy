@@ -25,7 +25,8 @@ const Cart = (props: Props) => {
         }
         console.log('email');
         console.log(email);
-        await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
+        // await axios.post('http://localhost:3010/api/products/completePurchase', data).then((resp) => {
+        await axios.post('https://aviza.vercel.app/api/products/completePurchase', data).then((resp) => {
             alert('Compra finalizada!')
             alert(resp.data)
         }).catch((e) => {

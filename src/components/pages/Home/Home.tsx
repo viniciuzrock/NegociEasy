@@ -17,7 +17,8 @@ const Home = () => {
 
     const fetchProducts = async (value: string) => {
         return await axios
-            .get(`http://localhost:3010/api/products/products/${value}`)
+            // .get(`http://localhost:3010/api/products/products/${value}`)
+            .get(`https://aviza.vercel.app/api/products/products/${value}`)
             .then((products) => products.data)
             .catch((e) => {
                 console.log('[Error Request]: ' + e);
