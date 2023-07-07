@@ -27,7 +27,8 @@ const Login = (props: Props) => {
                 password: password
             }
 
-            await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
+            // await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
+            await axios.post('https://aviza.vercel.app/api/users/login', data).then((response) => {
                 localStorage.setItem('email', response.data.data.email)
                 console.log(response.data.data.email);
 
