@@ -27,7 +27,7 @@ const Modal = ({ }: Props) => {
                                 <MdOutlineDone />
                             </div>
                             <div className={styles.modalBody}>
-                                <h3>Email enviado!</h3>
+                                <h3>Pedido recebido!</h3>
                                 <span>Enviamos um e-mail com um resumo do seu pedido :)</span>
                             </div>
                             <div className={styles.modalFooter}>

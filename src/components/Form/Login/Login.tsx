@@ -6,7 +6,6 @@ import Loading from '../../layout/Loading/Loading'
 import SubmitButton from '../../SubmitButton/SubmitButton'
 import { HiOutlineMail, HiOutlineLockClosed } from 'react-icons/hi'
 import Message from '../../layout/Message/Message'
-import Modal from '../../layout/Modal/Modal'
 type Props = {}
 
 const Login = (props: Props) => {
@@ -27,6 +26,7 @@ const Login = (props: Props) => {
                 email: email,
                 password: password
             }
+
             // await axios.post('http://localhost:3010/api/users/login', data).then((response) => {
             await axios.post('https://aviza.vercel.app/api/users/login', data).then((response) => {
                 localStorage.setItem('email', response.data.data.email)
@@ -55,7 +55,6 @@ const Login = (props: Props) => {
 
     return (
         <div className={styles.container}>
-
             <div className={styles.container_title}>
                 <span>Login</span>
             </div>
