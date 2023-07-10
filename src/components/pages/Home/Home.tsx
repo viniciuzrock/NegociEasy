@@ -4,16 +4,14 @@ import axios from 'axios'
 import ProductCard from '../../ProductCard/ProductCard'
 import Loading from '../../layout/Loading/Loading'
 import AppContext from '../../../context/AppContext'
+import Modal from '../../layout/Modal/Modal'
 
-
-type Props = {
-}
 
 const Home = () => {
     const [products, setProducts] = useState([])
 
     const userEmail = localStorage.getItem('email')
-    const { searchProduct, searchValue, setSearchValue, loading, setLoading } = useContext(AppContext)
+    const { searchProduct, searchValue, setSearchValue, loading, setLoading, openModal, setOpenModal } = useContext(AppContext)
 
     const fetchProducts = async (value: string) => {
         return await axios
@@ -71,6 +69,7 @@ const Home = () => {
                     }
                 </div>
             }
+            <Modal openModal={openModal} />
         </div>
     )
 }
